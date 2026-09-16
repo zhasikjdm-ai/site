@@ -3,57 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме — zhasikjdm-ai</title>
+    <title>DevTeam — 4D Interactive Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Живые фоновые свечения -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
     <div class="app-layout">
-        <!-- Боковое меню слева (только 2 кнопки) -->
-        <aside class="sidebar">
-            <div class="logo">zhasikjdm-ai</div>
-            <div class="nav-buttons">
-                <button id="btn-resume" class="nav-btn active" onclick="openTab(event, 'resume')">Открыть резюме</button>
-                <button id="btn-projects" class="nav-btn" onclick="openTab(event, 'projects')">Проекты</button>
+        <!-- Боковое меню переключения -->
+        <aside class="sidebar glass-card">
+            <div class="brand">
+                <i class="fa-solid fa-cube brand-icon"></i>
+                <span>DevTeam <small class="badge">4D</small></span>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-title">Карточки Резюме</span>
+                <button id="btn-shyngys" class="nav-btn active" onclick="openTab(event, 'shyngys')">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                    <span>Шыңғысхан</span>
+                </button>
+                <button id="btn-zhasulan" class="nav-btn" onclick="openTab(event, 'zhasulan')">
+                    <i class="fa-solid fa-user-ninja"></i>
+                    <span>Максад Жасұлан</span>
+                </button>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-title">Проекты</span>
+                <button id="btn-projects" class="nav-btn" onclick="openTab(event, 'projects')">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Наши Проекты</span>
+                </button>
             </div>
         </aside>
 
-        <!-- Единое окно с контентом справа -->
+        <!-- Главная область -->
         <main class="content-window">
             
-            <!-- Окно 1: Резюме -->
-            <div id="resume" class="tab-content active">
-                <h2>Мое Резюме</h2>
-                <div class="card">
-                    <h3>О себе</h3>
-                    <p>Студент специальности «Вычислительная техника и программное обеспечение». Занимаюсь веб-разработкой, проектированием баз данных (MS SQL Server / Supabase) и программированием на Java и Python.</p>
-                    
-                    <h3>Технические навыки</h3>
-                    <ul class="skills-list">
-                        <li>HTML5 / CSS3 / JavaScript</li>
-                        <li>Java / Python</li>
-                        <li>MS SQL Server / T-SQL</li>
-                        <li>Supabase</li>
-                        <li>Git / GitHub</li>
-                    </ul>
+            <!-- МЕСТО ПЕРЕХОДА КАРТОЧЕК (RESUME CONTAINER) -->
+            <section id="resume-container">
 
-                    <h3>Образование</h3>
-                    <p>Международный университет Астана (ВШИТиИ) — Вычислительная техника и ПО</p>
-                </div>
-            </div>
+                <!-- Резюме 1: Шыңғысхан -->
+                <article id="shyngys" class="tab-content active">
+                    <div class="profile-header glass-card tilt-card">
+                        <div class="avatar-gradient avatar-shyngys">ШБ</div>
+                        <div>
+                            <h2>Теңізбай Шыңғысхан</h2>
+                            <p class="subtitle"><i class="fa-solid fa-laptop-code"></i> Backend & Web Developer</p>
+                        </div>
+                    </div>
 
-            <!-- Окно 2: Проекты -->
-            <div id="projects" class="tab-content">
-                <h2>Мои Проекты</h2>
-                <div class="card">
-                    <h3>TagaMix</h3>
-                    <p>E-commerce веб-приложение с интерактивной фильтрацией товаров на JavaScript и подключенной базой данных Supabase.</p>
-                </div>
-                <div class="card">
-                    <h3>Персональный сайт-резюме</h3>
-                    <p>Веб-страница на HTML/CSS/JS с боковым меню навигации и хостингом на GitHub Pages.</p>
-                </div>
-            </div>
+                    <div class="grid-container">
+                        <div class="card glass-card tilt-card">
+                            <h3><i class="fa-solid fa-user-astronaut"></i> О себе</h3>
+                            <p>Студент специальности «Вычислительная техника и ПО». Специализируюсь на веб-разработке, проектировании баз данных и разработке серверной логики.</p>
+                        </div>
+
+                        <div class="card glass-card tilt-card">
+                            <h3><i class="fa-solid fa-graduation-cap"></i> Образование</h3>
+                            <p><strong>Международный университет Астана</strong></p>
+                            <p class="text-muted">Высшая Школа Информационных технологий и инженерии</p>
+                        </div>
+
+                        <div class="card glass-card tilt-card full-width">
+                            <h3><i class="fa-solid fa-layer-group"></i> Технологический стек</h3>
+                            <div class="skills-tags">
+                                <span>HTML5 / CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Java</span>
+                                <span>Python</span>
+                                <span>MS SQL Server</span>
+                                <span>Supabase</span>
+                                <span>Git / GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Резюме 2: Максад Жасұлан -->
+                <article id="zhasulan" class="tab-content">
+                    <div class="profile-header glass-card tilt-card">
+                        <div class="avatar-gradient avatar-zhasulan">МЖ</div>
+                        <div>
+                            <h2>Максад Жасұлан</h2>
+                            <p class="subtitle"><i class="fa-solid fa-code"></i> Software & Web Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="card glass-card tilt-card">
+                            <h3><i class="fa-solid fa-user-ninja"></i> О себе</h3>
+                            <p>Разработчик программного обеспечения. Специализируюсь на проектировании современных интерактивных веб-интерфейсов и оптимизации алгоритмов.</p>
+                        </div>
+
+                        <div class="card glass-card tilt-card">
+                            <h3><i class="fa-solid fa-graduation-cap"></i> Образование</h3>
+                            <p><strong>Информационные Технологии</strong></p>
+                            <p class="text-muted">Разработка ПО и системное программирование</p>
+                        </div>
+
+                        <div class="card glass-card tilt-card full-width">
+                            <h3><i class="fa-solid fa-layer-group"></i> Навыки</h3>
+                            <div class="skills-tags">
+                                <span>HTML5 / CSS3</span>
+                                <span>JavaScript</span>
+                                <span>C# / .NET</span>
+                                <span>Базы данных</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Блок Проекты -->
+                <article id="projects" class="tab-content">
+                    <h2 class="page-title"><i class="fa-solid fa-microchip"></i> Командные Проекты</h2>
+                    <div class="grid-container">
+                        <div class="card glass-card tilt-card">
+                            <h3>TagaMix</h3>
+                            <p>E-commerce веб-платформа с динамической фильтрацией товаров на клиенте и синхронизацией с облачной БД Supabase.</p>
+                        </div>
+                        <div class="card glass-card tilt-card">
+                            <h3>DevPortfolio 4D</h3>
+                            <p>Адаптивное портфолио с объемным пространственным эффектом, стеклянным дизайном и динамической сменой карточек.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
 
         </main>
     </div>

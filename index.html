@@ -3,77 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Теңізбай Шыңғысхан — Резюме</title>
+    <title>Резюме — zhasikjdm-ai</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Шапка страницы -->
-    <header class="navbar">
-        <div class="logo">zhasikjdm-ai</div>
-        <nav>
-            <a href="#" onclick="openTab(event, 'resume')">Резюме</a>
-            <a href="#" onclick="openTab(event, 'projects')">Проекты</a>
-        </nav>
-    </header>
-
-    <!-- Главный баннер (Hero Screen) -->
-    <section class="hero-section">
-        <h1>Привет, я Шыңғысхан!</h1>
-        <p>Backend & Web Разработчик | Студент ВШИТиИ</p>
-        
-        <!-- Кнопки в середине главного экрана -->
-        <div class="hero-buttons">
-            <button class="hero-btn primary" onclick="openTab(event, 'resume')">Открыть Резюме</button>
-            <button class="hero-btn secondary" onclick="openTab(event, 'projects')">Посмотреть Проекты</button>
-        </div>
-    </section>
-
-    <!-- Контентная область с вкладками по центру -->
-    <main class="main-container" id="content-section">
-        
-        <!-- Переключатели вкладок -->
-        <div class="tabs-header">
-            <button id="btn-resume" class="tab-btn active" onclick="openTab(event, 'resume')">Резюме</button>
-            <button id="btn-projects" class="tab-btn" onclick="openTab(event, 'projects')">Проекты</button>
-        </div>
-
-        <!-- Вкладка 1: Резюме -->
-        <div id="resume" class="tab-content active">
-            <h2>Мое Резюме</h2>
-            <div class="card">
-                <h3>О себе</h3>
-                <p>Студент специальности «Вычислительная техника и программное обеспечение». Занимаюсь веб-разработкой, проектированием баз данных (MS SQL Server / Supabase) и программированием на Java/Python.</p>
-                
-                <h3>Технические навыки</h3>
-                <ul class="skills-grid">
-                    <li>HTML5 / CSS3 / JavaScript</li>
-                    <li>Java / Python</li>
-                    <li>MS SQL Server / T-SQL</li>
-                    <li>Supabase</li>
-                    <li>Git / GitHub</li>
-                </ul>
-
-                <h3>Образование</h3>
-                <p>Международный университет Астана (ВШИТиИ) — Вычислительная техника и ПО</p>
+    <div class="app-layout">
+        <!-- Боковое меню слева (только 2 кнопки) -->
+        <aside class="sidebar">
+            <div class="logo">zhasikjdm-ai</div>
+            <div class="nav-buttons">
+                <button id="btn-resume" class="nav-btn active" onclick="openTab(event, 'resume')">Открыть резюме</button>
+                <button id="btn-projects" class="nav-btn" onclick="openTab(event, 'projects')">Проекты</button>
             </div>
-        </div>
+        </aside>
 
-        <!-- Вкладка 2: Проекты -->
-        <div id="projects" class="tab-content">
-            <h2>Мои Проекты</h2>
-            <div class="card">
-                <h3>TagaMix</h3>
-                <p>E-commerce веб-приложение с динамической фильтрацией товаров на JavaScript и подключенной базой данных Supabase.</p>
-            </div>
-            <div class="card">
-                <h3>Персональный сайт-резюме</h3>
-                <p>Адаптивный сайт-портфолио на HTML/CSS/JS с интерактивным управлением вкладками и деплоем на GitHub Pages.</p>
-            </div>
-        </div>
+        <!-- Единое окно с контентом справа -->
+        <main class="content-window">
+            
+            <!-- Окно 1: Резюме -->
+            <div id="resume" class="tab-content active">
+                <h2>Мое Резюме</h2>
+                <div class="card">
+                    <h3>О себе</h3>
+                    <p>Студент специальности «Вычислительная техника и программное обеспечение». Занимаюсь веб-разработкой, проектированием баз данных (MS SQL Server / Supabase) и программированием на Java и Python.</p>
+                    
+                    <h3>Технические навыки</h3>
+                    <ul class="skills-list">
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                        <li>Java / Python</li>
+                        <li>MS SQL Server / T-SQL</li>
+                        <li>Supabase</li>
+                        <li>Git / GitHub</li>
+                    </ul>
 
-    </main>
+                    <h3>Образование</h3>
+                    <p>Международный университет Астана (ВШИТиИ) — Вычислительная техника и ПО</p>
+                </div>
+            </div>
+
+            <!-- Окно 2: Проекты -->
+            <div id="projects" class="tab-content">
+                <h2>Мои Проекты</h2>
+                <div class="card">
+                    <h3>TagaMix</h3>
+                    <p>E-commerce веб-приложение с интерактивной фильтрацией товаров на JavaScript и подключенной базой данных Supabase.</p>
+                </div>
+                <div class="card">
+                    <h3>Персональный сайт-резюме</h3>
+                    <p>Веб-страница на HTML/CSS/JS с боковым меню навигации и хостингом на GitHub Pages.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

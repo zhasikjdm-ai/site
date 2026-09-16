@@ -9,162 +9,105 @@ body {
     background-color: #0f172a;
     color: #f8fafc;
     min-height: 100vh;
-}
-
-/* Навигация */
-.navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e293b;
-    padding: 15px 40px;
-    border-bottom: 1px solid #334155;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
-.navbar .logo {
+/* Общий макет: меню слева, окно справа */
+.app-layout {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Боковая панель слева */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    border-right: 1px solid #334155;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.sidebar .logo {
     font-size: 20px;
     font-weight: bold;
     color: #38bdf8;
-}
-
-.navbar nav a {
-    color: #94a3b8;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
-
-.navbar nav a:hover {
-    color: #38bdf8;
-}
-
-/* Главный экран / Баннер */
-.hero-section {
     text-align: center;
-    padding: 80px 20px 60px;
-    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-    border-bottom: 1px solid #334155;
 }
 
-.hero-section h1 {
-    font-size: 36px;
-    color: #f8fafc;
-    margin-bottom: 10px;
-}
-
-.hero-section p {
-    font-size: 18px;
-    color: #94a3b8;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
+.nav-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.hero-btn {
-    padding: 12px 28px;
-    font-size: 16px;
+.nav-btn {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
     font-weight: bold;
+    color: #94a3b8;
+    background-color: #0f172a;
+    border: 1px solid #334155;
     border-radius: 8px;
     cursor: pointer;
-    border: none;
-    transition: transform 0.2s, background-color 0.3s;
-}
-
-.hero-btn:hover {
-    transform: translateY(-2px);
-}
-
-.hero-btn.primary {
-    background-color: #0284c7;
-    color: #ffffff;
-}
-
-.hero-btn.primary:hover {
-    background-color: #0369a1;
-}
-
-.hero-btn.secondary {
-    background-color: #334155;
-    color: #f8fafc;
-}
-
-.hero-btn.secondary:hover {
-    background-color: #475569;
-}
-
-/* Основной блок с вкладками */
-.main-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: #1e293b;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.tabs-header {
-    display: flex;
-    border-bottom: 2px solid #334155;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 12px;
-    background: none;
-    border: none;
-    color: #94a3b8;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    text-align: left;
     transition: all 0.3s;
 }
 
-.tab-btn.active {
-    color: #38bdf8;
-    border-bottom: 3px solid #38bdf8;
+.nav-btn:hover {
+    color: #f8fafc;
+    background-color: #334155;
+}
+
+.nav-btn.active {
+    color: #ffffff;
+    background-color: #0284c7;
+    border-color: #38bdf8;
+}
+
+/* Основное окно справа */
+.content-window {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
 }
 
 .tab-content {
     display: none;
+    max-width: 800px;
 }
 
 .tab-content.active {
     display: block;
 }
 
+.tab-content h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #f8fafc;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+}
+
 .card {
-    background-color: #0f172a;
+    background-color: #1e293b;
+    border: 1px solid #334155;
     padding: 20px;
-    border-radius: 8px;
-    margin-top: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .card h3 {
     color: #38bdf8;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 8px;
 }
 
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    list-style: none;
-    margin-top: 8px;
+.skills-list {
+    margin-left: 20px;
+    line-height: 1.8;
 }
-
-.skills-grid li {
-    background-color: #334155;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-}ы

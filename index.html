@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Сайт — Резюме</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка страницы (Верхняя панель) -->
+    <header class="navbar">
+        <div class="logo">zhasikjdm-ai</div>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">О себе</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Главный экран по центру -->
+    <main class="main-container">
+        
+        <!-- Кнопки переключения вкладок -->
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="openTab('resume')">Резюме</button>
+            <button class="tab-btn" onclick="openTab('projects')">Проекты</button>
+        </div>
+
+        <!-- Содержимое Вкладки 1: Резюме -->
+        <div id="resume" class="tab-content active">
+            <h2>Мое Резюме</h2>
+            <div class="resume-card">
+                <h3>Обо мне</h3>
+                <p>Привет! Я веб-разработчик. Изучаю HTML, CSS, JavaScript и backend-технологии.</p>
+                
+                <h3>Навыки</h3>
+                <ul>
+                    <li>HTML5 / CSS3 / Flexbox</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Git & GitHub</li>
+                </ul>
+
+                <h3>Образование / Опыт</h3>
+                <p>Разработка веб-приложений, создание баз данных и работа с Git.</p>
+            </div>
+        </div>
+
+        <!-- Содержимое Вкладки 2: Проекты -->
+        <div id="projects" class="tab-content">
+            <h2>Мои Проекты</h2>
+            <div class="project-card">
+                <h3>TagaMix</h3>
+                <p>E-commerce платформа с интерактивной фильтрацией товаров и подключенной базой данных.</p>
+            </div>
+            <div class="project-card">
+                <h3>Сайт-резюме</h3>
+                <p>Персональная страница-портфолио, опубликованная на GitHub Pages.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

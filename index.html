@@ -3,59 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Сайт — Резюме</title>
+    <title>Теңізбай Шыңғысхан — Резюме</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Шапка страницы (Верхняя панель) -->
+    <!-- Шапка страницы -->
     <header class="navbar">
         <div class="logo">zhasikjdm-ai</div>
         <nav>
-            <a href="#home">Главная</a>
-            <a href="#about">О себе</a>
-            <a href="#contact">Контакты</a>
+            <a href="#" onclick="openTab(event, 'resume')">Резюме</a>
+            <a href="#" onclick="openTab(event, 'projects')">Проекты</a>
         </nav>
     </header>
 
-    <!-- Главный экран по центру -->
-    <main class="main-container">
+    <!-- Главный баннер (Hero Screen) -->
+    <section class="hero-section">
+        <h1>Привет, я Шыңғысхан!</h1>
+        <p>Backend & Web Разработчик | Студент ВШИТиИ</p>
         
-        <!-- Кнопки переключения вкладок -->
+        <!-- Кнопки в середине главного экрана -->
+        <div class="hero-buttons">
+            <button class="hero-btn primary" onclick="openTab(event, 'resume')">Открыть Резюме</button>
+            <button class="hero-btn secondary" onclick="openTab(event, 'projects')">Посмотреть Проекты</button>
+        </div>
+    </section>
+
+    <!-- Контентная область с вкладками по центру -->
+    <main class="main-container" id="content-section">
+        
+        <!-- Переключатели вкладок -->
         <div class="tabs-header">
-            <button class="tab-btn active" onclick="openTab('resume')">Резюме</button>
-            <button class="tab-btn" onclick="openTab('projects')">Проекты</button>
+            <button id="btn-resume" class="tab-btn active" onclick="openTab(event, 'resume')">Резюме</button>
+            <button id="btn-projects" class="tab-btn" onclick="openTab(event, 'projects')">Проекты</button>
         </div>
 
-        <!-- Содержимое Вкладки 1: Резюме -->
+        <!-- Вкладка 1: Резюме -->
         <div id="resume" class="tab-content active">
             <h2>Мое Резюме</h2>
-            <div class="resume-card">
-                <h3>Обо мне</h3>
-                <p>Привет! Я веб-разработчик. Изучаю HTML, CSS, JavaScript и backend-технологии.</p>
+            <div class="card">
+                <h3>О себе</h3>
+                <p>Студент специальности «Вычислительная техника и программное обеспечение». Занимаюсь веб-разработкой, проектированием баз данных (MS SQL Server / Supabase) и программированием на Java/Python.</p>
                 
-                <h3>Навыки</h3>
-                <ul>
-                    <li>HTML5 / CSS3 / Flexbox</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>Git & GitHub</li>
+                <h3>Технические навыки</h3>
+                <ul class="skills-grid">
+                    <li>HTML5 / CSS3 / JavaScript</li>
+                    <li>Java / Python</li>
+                    <li>MS SQL Server / T-SQL</li>
+                    <li>Supabase</li>
+                    <li>Git / GitHub</li>
                 </ul>
 
-                <h3>Образование / Опыт</h3>
-                <p>Разработка веб-приложений, создание баз данных и работа с Git.</p>
+                <h3>Образование</h3>
+                <p>Международный университет Астана (ВШИТиИ) — Вычислительная техника и ПО</p>
             </div>
         </div>
 
-        <!-- Содержимое Вкладки 2: Проекты -->
+        <!-- Вкладка 2: Проекты -->
         <div id="projects" class="tab-content">
             <h2>Мои Проекты</h2>
-            <div class="project-card">
+            <div class="card">
                 <h3>TagaMix</h3>
-                <p>E-commerce платформа с интерактивной фильтрацией товаров и подключенной базой данных.</p>
+                <p>E-commerce веб-приложение с динамической фильтрацией товаров на JavaScript и подключенной базой данных Supabase.</p>
             </div>
-            <div class="project-card">
-                <h3>Сайт-резюме</h3>
-                <p>Персональная страница-портфолио, опубликованная на GitHub Pages.</p>
+            <div class="card">
+                <h3>Персональный сайт-резюме</h3>
+                <p>Адаптивный сайт-портфолио на HTML/CSS/JS с интерактивным управлением вкладками и деплоем на GitHub Pages.</p>
             </div>
         </div>
 
@@ -63,4 +76,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

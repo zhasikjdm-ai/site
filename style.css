@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-/* Верхняя шапка сайта */
+/* Навигация */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,9 @@ body {
     background-color: #1e293b;
     padding: 15px 40px;
     border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar .logo {
@@ -38,17 +41,75 @@ body {
     color: #38bdf8;
 }
 
-/* Центрирование главного экрана */
+/* Главный экран / Баннер */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 1px solid #334155;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-btn.primary {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+.hero-btn.primary:hover {
+    background-color: #0369a1;
+}
+
+.hero-btn.secondary {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+.hero-btn.secondary:hover {
+    background-color: #475569;
+}
+
+/* Основной блок с вкладками */
 .main-container {
     max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 25px;
     background-color: #1e293b;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Переключатели вкладок */
 .tabs-header {
     display: flex;
     border-bottom: 2px solid #334155;
@@ -72,7 +133,6 @@ body {
     border-bottom: 3px solid #38bdf8;
 }
 
-/* Контент вкладок */
 .tab-content {
     display: none;
 }
@@ -81,20 +141,30 @@ body {
     display: block;
 }
 
-.resume-card, .project-card {
+.card {
     background-color: #0f172a;
     padding: 20px;
     border-radius: 8px;
     margin-top: 15px;
 }
 
-.resume-card h3, .project-card h3 {
+.card h3 {
     color: #38bdf8;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 8px;
 }
 
-ul {
-    margin-left: 20px;
-    margin-bottom: 10px;
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin-top: 8px;
 }
+
+.skills-grid li {
+    background-color: #334155;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}ы

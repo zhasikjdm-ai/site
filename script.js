@@ -1,48 +1,58 @@
-// Переключение вкладок
-function openTab(event, tabId) {
-    if (event) {
-        event.preventDefault();
+// ==========================================
+// Вкладкаларды ауыстыру функциясы (Портфолио үшін)
+// ==========================================
+function openTab(evt, tabName) {
+    const tabContents = document.getElementsByClassName('tab-content');
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active');
     }
 
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => content.classList.remove('active'));
-
-    const buttons = document.querySelectorAll('.nav-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    const activeTab = document.getElementById(tabId);
-    if (activeTab) {
-        activeTab.classList.add('active');
+    const navBtns = document.getElementsByClassName('nav-btn');
+    for (let i = 0; i < navBtns.length; i++) {
+        navBtns[i].classList.remove('active');
     }
 
-    const activeBtn = document.getElementById('btn-' + tabId);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
 }
 
-// 4D Эффект объёмного наклона карточек при движении мыши (3D Tilt)
-document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.tilt-card');
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
+// ==========================================
+// 1-ЗАДАНИЕ
+// Спец. кнопка арқылы «Салам алейкум» -> «Сәлем әлем»
+// ==========================================
+const task1Text = document.getElementById('task1-text');
+const task1Btn = document.getElementById('task1-btn');
 
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const cardX = rect.left + rect.width / 2;
-        const cardY = rect.top + rect.height / 2;
-
-        const angleX = (cardY - mouseY) / 30;
-        const angleY = (mouseX - cardX) / 30;
-
-        // Применяем объёмный поворот карточек
-        if (
-            mouseX >= rect.left - 50 && mouseX <= rect.right + 50 &&
-            mouseY >= rect.top - 50 && mouseY <= rect.bottom + 50
-        ) {
-            card.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
+if (task1Btn && task1Text) {
+    task1Btn.addEventListener('click', function() {
+        if (task1Text.textContent === 'Салам алейкум') {
+            task1Text.textContent = 'Сәлем әлем';
         } else {
-            card.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+            task1Text.textContent = 'Салам алейкум';
         }
     });
-});
+}
+
+// ==========================================
+// 2-ЗАДАНИЕ. Элемент кластарын басқару
+// Белсенді класты (active) қосу/жою (toggle),
+// барлық кластарды консольге және жеке "p" тегіне басу
+// ==========================================
+const task2Element = document.getElementById('task2-element');
+const task2ClassesP = document.getElementById('task2-classes');
+
+if (task2Element && task2ClassesP) {
+    // Алғашқы кластар тізімін көрсету
+    task2ClassesP.textContent = 'Барлық кластар тізімі: ' + task2Element.className;
+
+    task2Element.addEventListener('click', function() {
+        // Белсенді класты элементке қосу (егер жоқ болса) немесе жою
+        this.classList.toggle('active');
+
+        // Барлық элемент кластарының тізімін консольге шығару
+        console.log('Элементтің кластары:', this.className);
+
+        // Жақын жердегі бөлек "p" тегіне басып шығару
+        task2ClassesP.textContent = 'Барлық кластар тізімі: ' + this.className;
+    });
+}

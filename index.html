@@ -34,6 +34,18 @@
             </div>
 
             <div class="nav-section">
+                <span class="nav-title">Задания</span>
+                <button id="btn-task1" class="nav-btn" onclick="openTab(event, 'task1')">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Задание 1</span>
+                </button>
+                <button id="btn-task2" class="nav-btn" onclick="openTab(event, 'task2')">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Задание 2</span>
+                </button>
+            </div>
+
+            <div class="nav-section">
                 <span class="nav-title">Проекты</span>
                 <button id="btn-projects" class="nav-btn" onclick="openTab(event, 'projects')">
                     <i class="fa-solid fa-rocket"></i>
@@ -45,7 +57,6 @@
         <!-- Главная область -->
         <main class="content-window">
             
-            <!-- МЕСТО ПЕРЕХОДА КАРТОЧЕК (RESUME CONTAINER) -->
             <section id="resume-container">
 
                 <!-- Резюме 1: Шыңғысхан -->
@@ -117,6 +128,24 @@
                                 <span>Git</span>
                             </div>
                         </div>
+                    </div>
+                </article>
+
+                <!-- ЗАДАНИЕ 1 -->
+                <article id="task1" class="tab-content">
+                    <h2 class="page-title"><i class="fa-solid fa-list-check"></i> Задание 1</h2>
+                    <div class="card glass-card tilt-card task-card">
+                        <h3 id="task1-text" class="greeting-text">Салам алейкум</h3>
+                        <button id="task1-btn" class="action-btn">Изменить текст</button>
+                    </div>
+                </article>
+
+                <!-- ЗАДАНИЕ 2 -->
+                <article id="task2" class="tab-content">
+                    <h2 class="page-title"><i class="fa-solid fa-sliders"></i> Задание 2. Элемент кластарын басқару</h2>
+                    <div class="card glass-card tilt-card task-card">
+                        <p id="task2-element" class="demo-element">Элементке басыңыз (toggle active class)</p>
+                        <p id="task2-classes" class="class-info">Барлық кластар тізімі: demo-element</p>
                     </div>
                 </article>
 

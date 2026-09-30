@@ -1,4 +1,4 @@
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 
     * {
         box-sizing: border-box;
@@ -348,4 +348,248 @@
         color: #c084fc;
         font-size: 15px;
         font-weight: 600;
+    }
+
+    /* ==========================================================
+       ЗАДАНИЕ 3 — кесте және басқару элементтері
+       ========================================================== */
+    body {
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: flex-end;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #9ca3af;
+    }
+
+    .field input[type="number"] {
+        width: 110px;
+        padding: 10px 12px;
+        font-size: 15px;
+        color: #f3f4f6;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+
+    .field input[type="number"]:focus {
+        border-color: #38bdf8;
+    }
+
+    .field input[type="color"] {
+        width: 64px;
+        height: 44px;
+        padding: 3px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+    }
+
+    .form-error {
+        color: #f87171;
+        font-size: 14px;
+        min-height: 18px;
+    }
+
+    .color-result {
+        color: #c084fc;
+        font-size: 16px;
+        font-weight: 700;
+        min-height: 24px;
+    }
+
+    .table-wrap {
+        width: 100%;
+        overflow: auto;
+    }
+
+    #grid-table {
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    #grid-table td {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    #grid-table td:hover {
+        outline: 2px solid #38bdf8;
+        outline-offset: -2px;
+    }
+
+    /* ==========================================================
+       ЗАДАНИЕ 4 — тақырып ауыстырғыш (бір ғана батырма)
+       ========================================================== */
+    .theme-switch {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #f3f4f6;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .theme-switch:hover {
+        border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .theme-switch i {
+        width: 18px;
+        text-align: center;
+        color: #38bdf8;
+    }
+
+    .switch-track {
+        margin-left: auto;
+        width: 46px;
+        height: 24px;
+        border-radius: 12px;
+        background: #6b7280;
+        position: relative;
+        flex-shrink: 0;
+        transition: background 0.3s ease;
+    }
+
+    .switch-track::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    [data-theme="dark"] .switch-track {
+        background: linear-gradient(135deg, #0284c7, #a855f7);
+    }
+
+    [data-theme="dark"] .switch-track::after {
+        transform: translateX(22px);
+    }
+
+    /* ---------- Жарық тақырып (Light theme) ---------- */
+    [data-theme="light"] body {
+        background-color: #f3f4f6;
+        color: #111827;
+    }
+
+    [data-theme="light"] .glass-card {
+        background: rgba(255, 255, 255, 0.78);
+        border-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .tilt-card:hover {
+        border-color: rgba(2, 132, 199, 0.45);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 25px rgba(2, 132, 199, 0.12);
+    }
+
+    [data-theme="light"] .brand {
+        color: #111827;
+    }
+
+    [data-theme="light"] .nav-btn {
+        color: #4b5563;
+    }
+
+    [data-theme="light"] .nav-btn:hover {
+        color: #111827;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .nav-btn.active {
+        color: #111827;
+    }
+
+    [data-theme="light"] .nav-btn.active i,
+    [data-theme="light"] .theme-switch i {
+        color: #0284c7;
+    }
+
+    [data-theme="light"] .card p {
+        color: #374151;
+    }
+
+    [data-theme="light"] .text-muted {
+        color: #6b7280 !important;
+    }
+
+    [data-theme="light"] .subtitle,
+    [data-theme="light"] .card h3,
+    [data-theme="light"] .greeting-text {
+        color: #0284c7;
+    }
+
+    [data-theme="light"] .skills-tags span {
+        color: #0369a1;
+        background: rgba(2, 132, 199, 0.08);
+        border-color: rgba(2, 132, 199, 0.25);
+    }
+
+    [data-theme="light"] .demo-element {
+        color: #111827;
+    }
+
+    [data-theme="light"] .demo-element.active {
+        color: #0369a1;
+        border-color: #0284c7;
+        background: rgba(2, 132, 199, 0.12);
+    }
+
+    [data-theme="light"] .class-info,
+    [data-theme="light"] .color-result {
+        color: #9333ea;
+    }
+
+    [data-theme="light"] .field {
+        color: #6b7280;
+    }
+
+    [data-theme="light"] .field input[type="number"] {
+        color: #111827;
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="light"] .field input[type="color"] {
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="light"] #grid-table td {
+        border-color: rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] .theme-switch {
+        color: #111827;
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.1);
     }

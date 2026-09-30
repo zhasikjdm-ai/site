@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,14 @@
                     <i class="fa-solid fa-sliders"></i>
                     <span>Задание 2</span>
                 </button>
+                <button id="btn-task3" class="nav-btn" onclick="openTab(event, 'task3')">
+                    <i class="fa-solid fa-table-cells"></i>
+                    <span>Задание 3</span>
+                </button>
+                <button id="btn-task4" class="nav-btn" onclick="openTab(event, 'task4')">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Задание 4</span>
+                </button>
             </div>
 
             <div class="nav-section">
@@ -50,6 +58,15 @@
                 <button id="btn-projects" class="nav-btn" onclick="openTab(event, 'projects')">
                     <i class="fa-solid fa-rocket"></i>
                     <span>Наши Проекты</span>
+                </button>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-title">Тема</span>
+                <button id="theme-toggle" class="theme-switch" type="button">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    <span id="theme-label">Қараңғы режим</span>
+                    <span class="switch-track"></span>
                 </button>
             </div>
         </aside>
@@ -146,6 +163,44 @@
                     <div class="card glass-card tilt-card task-card">
                         <p id="task2-element" class="demo-element">Элементке басыңыз (toggle active class)</p>
                         <p id="task2-classes" class="class-info">Барлық кластар тізімі: demo-element</p>
+                    </div>
+                </article>
+
+                <!-- ЗАДАНИЕ 3 -->
+                <article id="task3" class="tab-content">
+                    <h2 class="page-title"><i class="fa-solid fa-table-cells"></i> Задание 3. Кесте құру</h2>
+                    <div class="card glass-card tilt-card task-card">
+                        <div class="controls">
+                            <label class="field">Жолдар саны
+                                <input type="number" id="rows-input" min="1" max="20" value="5">
+                            </label>
+                            <label class="field">Бағандар саны
+                                <input type="number" id="cols-input" min="1" max="20" value="5">
+                            </label>
+                            <button id="create-table-btn" class="action-btn" type="button">Кесте құру</button>
+                        </div>
+                        <div id="table-error" class="form-error"></div>
+
+                        <div class="controls">
+                            <label class="field">Түс таңдау
+                                <input type="color" id="color-input" value="#38bdf8">
+                            </label>
+                            <button id="count-color-btn" class="action-btn" type="button">Осы түстегі ұяшықтарды санау</button>
+                        </div>
+                        <div id="color-result" class="color-result"></div>
+
+                        <div class="table-wrap">
+                            <table id="grid-table"></table>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ЗАДАНИЕ 4 -->
+                <article id="task4" class="tab-content">
+                    <h2 class="page-title"><i class="fa-solid fa-moon"></i> Задание 4. Қараңғы тақырып</h2>
+                    <div class="card glass-card tilt-card task-card">
+                        <p>Сол жақ мәзірдегі «Тема» ауыстырғышын басыңыз — бүкіл сайт қараңғы және жарық режимдер арасында ауысады. Таңдалған режим браузерде сақталады.</p>
+                        <p id="theme-status" class="class-info">Қазіргі режим: қараңғы</p>
                     </div>
                 </article>
 
